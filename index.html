@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elétrica Ferreira</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .gate-container {
+      position: relative;
+      height: 400px;
+      overflow: hidden;
+    }
+    .gate {
+      position: absolute;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      background-color: #1a1a1a;
+      z-index: 20;
+      transition: transform 2s ease-in-out;
+    }
+    .gate.left {
+      left: 0;
+      border-right: 2px solid #facc15;
+      background-image: url('imagens/portaoeletrico.png');
+      background-size: cover;
+      background-position: right;
+      transform: translateX(0);
+    }
+
+    .gate.right {
+      right: 0;
+      border-left: 2px solid #facc15;
+      background-image: url('imagens/portaoeletrico.png');
+      background-size: cover;
+      background-position: left;
+      transform: translateX(0);
+    } 
+    .gate.open.left {
+      transform: translateX(-100%);
+    }
+    .gate.open.right {
+      transform: translateX(100%);
+    }
+    .background-slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 1s ease-in-out;
+      z-index: 10;
+    }
+    .hero-text {
+      position: absolute;
+      z-index: 30;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+    }
+  </style>
+</head>
+<body class="bg-black text-white">
+  <!-- Header -->
+  <header class="bg-yellow-600 p-4 shadow-md flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-white">Elétrica Ferreira</h1>
+    <a href="https://wa.me/5541985109882" target="_blank" class="bg-white text-yellow-700 px-4 py-2 rounded-md font-semibold shadow">Fale Conosco</a>
+  </header>
+
+  <!-- Portões animados -->
+  <section class="gate-container">
+    <div class="background-slide" id="backgroundSlide" style="background-image: url('imagens/portao-removebg-preview.png');"></div>
+    <div class="gate left" id="gateLeft"></div>
+    <div class="gate right" id="gateRight"></div>
+    <div class="hero-text">
+      <h2 class="text-4xl font-bold text-yellow-500 mb-4">Serviços Elétricos de Qualidade</h2>
+      <p class="text-lg mb-6">Com Gerson da Elétrica Ferreira, você tem segurança, agilidade e confiança no serviço.</p>
+      <a href="https://wa.me/5541985109882" target="_blank" class="bg-yellow-600 text-white px-6 py-3 rounded-full font-semibold shadow-md">Solicite um Orçamento</a>
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <section class="py-12 px-4 bg-gray-900">
+    <h3 class="text-3xl font-bold text-center text-yellow-500 mb-8">Nossos Serviços</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <div class="bg-black border border-yellow-600 p-6 rounded shadow flex items-center gap-4">
+        <img src="imagens/Tomada.jpg" alt="Instalações elétricas" class="w-16 h-16">
+        <span>Instalações elétricas residenciais e comerciais</span>
+      </div>
+      <div class="bg-black border border-yellow-600 p-6 rounded shadow flex items-center gap-4">
+        <img src="imagens/manutenção_elétrica.png" alt="Manutenção elétrica" class="w-16 h-16">
+        <span>Manutenção e reparos elétricos</span>
+      </div>
+      <div class="bg-black border border-yellow-600 p-6 rounded shadow flex items-center gap-4">
+        <img src="imagens/Quadro_eletrico.png" alt="Quadros elétricos" class="w-16 h-16">
+        <span>Quadros elétricos e disjuntores</span>
+      </div>
+      <div class="bg-black border border-yellow-600 p-6 rounded shadow flex items-center gap-4">
+        <img src="imagens/iluminação_led.png" alt="Iluminação LED" class="w-16 h-16">
+        <span>Iluminação LED e automação</span>
+      </div>
+      <div class="bg-black border border-yellow-600 p-6 rounded shadow flex items-center gap-4">
+        <img src="imagens/protao_eletronico.png" alt="Portões eletrônicos" class="w-16 h-16">
+        <span>Portões eletrônicos - instalação e manutenção</span>
+      </div>
+      <div class="bg-black border border-yellow-600 p-6 rounded shadow flex items-center gap-4">
+        <img src="imagens/eletrodomésticos.png" alt="Eletrodomésticos" class="w-16 h-16">
+        <span>Manutenção e instalação de eletrodomésticos</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section class="bg-yellow-500 py-12 px-4 text-center text-black">
+    <h3 class="text-3xl font-bold mb-4">Sobre a Elétrica Ferreira</h3>
+    <p class="max-w-2xl mx-auto text-lg">Com vasta experiência no setor, a Elétrica Ferreira, liderada por Gerson, se destaca pela excelência em serviços elétricos. Nosso compromisso com a qualidade, segurança e satisfação do cliente é a base de cada projeto. Atuamos em toda Curitiba e região metropolitana, oferecendo soluções personalizadas, sempre buscando superar as expectativas com pontualidade, dedicação e profissionalismo.</p>
+  </section>
+
+  <!-- Contato CTA -->
+  <section class="text-center py-12 px-4 bg-black">
+    <h4 class="text-2xl font-bold text-yellow-500 mb-4">Precisa de um eletricista de confiança?</h4>
+    <a href="https://wa.me/5541985109882" target="_blank" class="bg-green-500 text-white px-6 py-3 rounded-full font-semibold shadow-md">Chamar no WhatsApp</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-950 text-white py-6 text-center">
+    <p>© 2025 Elétrica Ferreira - Todos os direitos reservados</p>
+    <p>Atendimento em Curitiba e região metropolitana | CNPJ 00.000.000/0001-00</p>
+  </footer>
+
+  <!-- JavaScript para animação dos portões -->
+  <script>
+    const gateLeft = document.getElementById('gateLeft');
+    const gateRight = document.getElementById('gateRight');
+    const backgroundSlide = document.getElementById('backgroundSlide');
+  
+    const imagens = [
+      'imagens/banner/Arrumando_o_quadro_eletrico.png',
+      'imagens/banner/Arrumando_a_maquina.png',
+      'imagens/banner/arrumando_a_tomada.png'
+    ];
+  
+    let index = 0;
+  
+    function animarPortoes() {
+      // 1. FECHAR os portões
+      gateLeft.classList.remove('open');
+      gateRight.classList.remove('open');
+  
+      // 2. Esperar eles "fecharem" (2s), trocar imagem, depois ABRIR de novo
+      setTimeout(() => {
+        index = (index + 1) % imagens.length;
+        backgroundSlide.style.backgroundImage = `url('${imagens[index]}')`;
+  
+        // 3. Após fechar e trocar imagem, ABRIR os portões
+        gateLeft.classList.add('open');
+        gateRight.classList.add('open');
+      }, 2000); // tempo da animação de fechamento
+    }
+  
+    // Início da animação quando a página carrega
+    window.onload = () => {
+      setTimeout(() => {
+        gateLeft.classList.add('open');
+        gateRight.classList.add('open');
+        setInterval(animarPortoes, 7000);
+      }, 1000);
+    }
+  </script>
+  
+</body>
+</html>
